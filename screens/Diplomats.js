@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
-import { Animated, Button, Image, StyleSheet, Text, View } from "react-native";
+import { Animated, Image, StyleSheet, Text } from "react-native";
 import { useIsFocused } from "@react-navigation/native";
 import { ScrollView } from "react-native-gesture-handler";
 
-function Diplomats() {
-  const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
+export default function Diplomats() {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
   const isFocused = useIsFocused();
 
   useEffect(() => {
@@ -35,25 +35,25 @@ function Diplomats() {
         }}
       >
         <Text style={[styles.text, styles.heading]}>Advocate (INFJ)</Text>
-        <Image style={styles.image} source={require('../assets/images/wand-infj.png')}/>
+        <Image style={styles.image} source={require('../assets/images/wand-infj.png')} />
         <Text style={styles.text}>
           Advocates are quiet and mystical creative nurturers that have a strong sense of personal integrity and drive to help others to realize their potential. They are very inspiring and dedicated to help others with original solutions to personal challenges.
         </Text>
 
         <Text style={[styles.text, styles.heading]}>Mediator (INFP)</Text>
-        <Image style={styles.image} source={require('../assets/images/nature-infp.png')}/>
+        <Image style={styles.image} source={require('../assets/images/nature-infp.png')} />
         <Text style={styles.text}>
           Mediators are imaginative idealists that are guided by their own core values and beliefs. They look at all the possibilities and plan for a better future.
         </Text>
 
         <Text style={[styles.text, styles.heading]}>Protagonist (ENFJ)</Text>
-        <Image style={styles.image} source={require('../assets/images/sword-enfj.png')}/>
+        <Image style={styles.image} source={require('../assets/images/sword-enfj.png')} />
         <Text style={styles.text}>
           Protagonists are charismatic and inspiring organizers that are able to mesmerize their listeners. They want to implement their visions to do what's best for humanity.
         </Text>
 
         <Text style={[styles.text, styles.heading]}>Campaigner (ENFP)</Text>
-        <Image style={styles.image} source={require('../assets/images/backpack-enfp.png')}/>
+        <Image style={styles.image} source={require('../assets/images/backpack-enfp.png')} />
         <Text style={styles.text}>
           Campaigners are enthusiastic, creative, people-centered creators that can always find a way to smile. They love to help others to explore their creative potential.
         </Text>
@@ -66,9 +66,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "#222",
+    backgroundColor: "#222222",
   },
-  
+
   text: {
     color: "#ffffff",
     textAlign: "center",
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
   },
 
+  // contain the image within size and center
   image: {
     width: "40%",
     height: undefined,
@@ -98,5 +99,3 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
 });
-
-export default Diplomats;

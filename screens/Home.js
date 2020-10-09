@@ -3,7 +3,7 @@
 // https://www.16personalities.com/articles/our-theory
 
 import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 export default function Home({ navigation }) {
@@ -61,6 +61,16 @@ export default function Home({ navigation }) {
       <Text style={styles.text}>
         Perceivers tend to appreciate flexibility and spontaneity, and they like to keep everything open to a change of mind.
       </Text>
+
+      {/* Navigate to the Personality Chart Page on Button Press */}
+      <Button color="#ea5252"
+        title="Personality Strengths and Weaknesses"
+        onPress={() =>
+          navigation.navigate("Personality Chart", {
+            itemId: 100,
+          })
+        }
+      />
     </ScrollView>
   );
 }

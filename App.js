@@ -9,6 +9,7 @@ import Analysts from "./screens/Analysts";
 import Diplomats from "./screens/Diplomats";
 import Sentinels from "./screens/Sentinels"
 import Explorers from "./screens/Explorers";
+import Chart from "./screens/Chart";
 
 const Drawer = createDrawerNavigator();
 const RootTab = createBottomTabNavigator();
@@ -17,6 +18,7 @@ const DrawerNavigator = () => {
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="Personality Types" component={RootTabNavigator} />
+      <Drawer.Screen name="Personality Chart" component={Chart} />
     </Drawer.Navigator>
   );
 };
@@ -28,10 +30,20 @@ const RootTabNavigator = () => {
         activeTintColor: "#defdef",
         inactiveTintColor: "#808080",
         style: {
-          backgroundColor: '#000000',
-      },
+          backgroundColor: '#000000', //change the bg color of bottom tab nav
+        },
       }}
     >
+      <RootTab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: "Home",
+          tabBarIcon: ({ focused }) => (
+            <Entypo name="home" size={24} color={focused ? "#ac97b4" : "gray"} />
+          ),
+        }}
+      />
       <RootTab.Screen
         name="Analysts"
         component={Analysts}
@@ -49,16 +61,6 @@ const RootTabNavigator = () => {
           title: "Diplomats",
           tabBarIcon: ({ focused }) => (
             <AntDesign name="heart" size={24} color={focused ? "#ac97b4" : "gray"} />
-          ),
-        }}
-      />
-      <RootTab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          title: "Home",
-          tabBarIcon: ({ focused }) => (
-            <Entypo name="home" size={24} color={focused ? "#ac97b4" : "gray"} />
           ),
         }}
       />
